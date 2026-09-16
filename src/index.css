@@ -271,9 +271,9 @@ body {
   position: absolute;
   top: 62%;
   transform: translateY(-50%);
-  font-size: clamp(13px, min(1.7vw, 2.2vh), 22px);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-size: clamp(16px, min(2.4vw, 3.2vh), 32px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--color-text-light);
   white-space: nowrap;
@@ -282,11 +282,11 @@ body {
 }
 
 .hero-sub-left {
-  right: calc(50% + clamp(150px, 18vw, 275px));
+  right: calc(50% + clamp(165px, 20vw, 310px));
 }
 
 .hero-sub-right {
-  left: calc(50% + clamp(150px, 18vw, 275px));
+  left: calc(50% + clamp(165px, 20vw, 310px));
 }
 
 /* Portrait Image: Lowered so hair subtly touches baseline of KUNCORO without obscuring letters */
@@ -323,13 +323,13 @@ body {
     margin-top: clamp(-55px, -5vw, -25px);
   }
   .hero-sub-flank {
-    font-size: clamp(12px, 1.5vw, 17px);
+    font-size: clamp(14px, 2vw, 22px);
   }
   .hero-sub-left {
-    right: calc(50% + clamp(130px, 16vw, 220px));
+    right: calc(50% + clamp(140px, 18vw, 240px));
   }
   .hero-sub-right {
-    left: calc(50% + clamp(130px, 16vw, 220px));
+    left: calc(50% + clamp(140px, 18vw, 240px));
   }
 }
 
@@ -344,14 +344,14 @@ body {
     margin-top: clamp(-50px, -5vh, -20px);
   }
   .hero-sub-flank {
-    font-size: clamp(12px, 2vh, 17px);
+    font-size: clamp(14px, 2.6vh, 24px);
     top: 61%;
   }
   .hero-sub-left {
-    right: calc(50% + clamp(135px, 17vw, 230px));
+    right: calc(50% + clamp(145px, 18vw, 260px));
   }
   .hero-sub-right {
-    left: calc(50% + clamp(135px, 17vw, 230px));
+    left: calc(50% + clamp(145px, 18vw, 260px));
   }
 }
 
@@ -364,14 +364,14 @@ body {
     margin-top: -15px;
   }
   .hero-sub-flank {
-    font-size: clamp(11px, 1.8vh, 14px);
+    font-size: clamp(13px, 2.2vh, 18px);
     top: 60%;
   }
   .hero-sub-left {
-    right: calc(50% + clamp(115px, 14vw, 170px));
+    right: calc(50% + clamp(125px, 16vw, 190px));
   }
   .hero-sub-right {
-    left: calc(50% + clamp(115px, 14vw, 170px));
+    left: calc(50% + clamp(125px, 16vw, 190px));
   }
 }
 
