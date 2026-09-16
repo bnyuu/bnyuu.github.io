@@ -1538,115 +1538,114 @@ body {
 /* ==========================================================================
    Project Media & Architecture Showcase Grid
    ========================================================================== */
-.project-gallery-section {
+/* ==========================================================================
+   Tilted Photo Gallery Strip (Scatter/Tilted Portrait Cards)
+   ========================================================================== */
+.tilted-gallery-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
 
-.gallery-header-row {
+.tilted-gallery-strip {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.gallery-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.gallery-count-badge {
-  font-size: 11px;
-  font-weight: 700;
-  font-family: monospace;
-  letter-spacing: 0.8px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-}
-
-.project-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 16px;
   width: 100%;
+  padding: 28px 10px 36px;
+  box-sizing: border-box;
 }
 
-.gallery-card {
-  background: #0d0d0d;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
+.tilted-photo-card {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 245px;
+  min-width: 160px;
+  aspect-ratio: 3 / 4.1;
+  background: #111111;
+  border: 2.5px solid #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75), 0 2px 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  transition: all 0.3s var(--transition-smooth);
-  position: relative;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.25s ease,
+              z-index 0.1s ease;
+  user-select: none;
+  transform-origin: center center;
 }
 
-.gallery-card:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+/* Individual rotation angles mimicking natural scattered cards */
+.tilted-card-0 {
+  transform: rotate(-3.5deg) translateY(4px);
+  z-index: 1;
 }
 
-.gallery-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.tilted-card-1 {
+  transform: rotate(2.8deg) translateY(-4px);
+  z-index: 2;
 }
 
-.gallery-card-tag {
-  font-size: 10.5px;
-  font-weight: 700;
-  font-family: monospace;
-  letter-spacing: 0.8px;
-  color: rgba(255, 255, 255, 0.7);
+.tilted-card-2 {
+  transform: rotate(-2.2deg) translateY(2px);
+  z-index: 3;
 }
 
-.gallery-zoom-btn {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
-  transition: all 0.2s ease;
+.tilted-card-3 {
+  transform: rotate(3.4deg) translateY(-2px);
+  z-index: 4;
 }
 
-.gallery-card:hover .gallery-zoom-btn {
-  background: #ffffff;
-  color: #080808;
-  transform: scale(1.1);
+/* Hover / Focus state: straightens, lifts up, sharp shadow */
+.tilted-photo-card:hover,
+.tilted-photo-card:focus-visible {
+  transform: rotate(0deg) translateY(-12px) scale(1.06) !important;
+  z-index: 10;
+  border-color: #ffffff;
+  box-shadow: 0 26px 54px rgba(0, 0, 0, 0.95), 0 0 0 1px #ffffff, 0 0 25px rgba(255, 255, 255, 0.2);
+  outline: none;
 }
 
-.gallery-card-visual {
+.tilted-photo-inner {
   width: 100%;
-  min-height: 180px;
-  background: #080808;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  position: relative;
-  padding: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: #080808;
+}
+
+.tilted-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;
+  filter: contrast(1.04);
+}
+
+.tilted-photo-card:hover .tilted-card-img {
+  transform: scale(1.08);
+  filter: contrast(1.1);
+}
+
+.tilted-visual-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
   box-sizing: border-box;
+  background: #080808;
 }
 
 .gallery-svg {
@@ -1656,35 +1655,37 @@ body {
   object-fit: contain;
 }
 
-/* Real Activity Photo Container */
-.gallery-photo-container {
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-  max-height: 230px;
+.tilted-photo-hover-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  border-radius: 12px;
-  background: #000000;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 5;
 }
 
-.gallery-activity-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.4s var(--transition-smooth), filter 0.3s ease;
-  filter: contrast(1.05);
+.tilted-photo-card:hover .tilted-photo-hover-pill {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
-.gallery-card:hover .gallery-activity-img {
-  transform: scale(1.06);
-  filter: contrast(1.12);
-}
-
+/* Lightbox Photo Styles */
 .lightbox-photo-container {
   width: 100%;
   max-height: 520px;
@@ -1705,27 +1706,12 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-.gallery-card-bottom {
-  padding: 16px 18px;
+.lightbox-visual-content {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background: #0d0d0d;
-}
-
-.gallery-item-title {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
-  letter-spacing: -0.2px;
-}
-
-.gallery-item-caption {
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
 
 /* Custom Visual Screen Components */
@@ -2172,11 +2158,46 @@ body {
 }
 
 /* Responsive adjustments for full-page project view */
-@media (max-width: 768px) {
-  .project-gallery-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .tilted-gallery-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    padding: 20px 6px;
+    max-width: 580px;
+    margin: 0 auto;
   }
+  .tilted-photo-card {
+    max-width: 100%;
+    min-width: 0;
+    aspect-ratio: 3 / 3.9;
+  }
+  .tilted-card-0 { transform: rotate(-2.5deg); }
+  .tilted-card-1 { transform: rotate(2.5deg); }
+  .tilted-card-2 { transform: rotate(-2deg); }
+  .tilted-card-3 { transform: rotate(2deg); }
+}
+
+@media (max-width: 560px) {
+  .tilted-gallery-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 14px 2px;
+    max-width: 100%;
+  }
+  .tilted-photo-card {
+    aspect-ratio: 3 / 4;
+    border-width: 2px;
+    border-radius: 10px;
+  }
+  .tilted-card-0 { transform: rotate(-1.5deg); }
+  .tilted-card-1 { transform: rotate(1.5deg); }
+  .tilted-card-2 { transform: rotate(-1.2deg); }
+  .tilted-card-3 { transform: rotate(1.2deg); }
+  .tilted-photo-hover-pill { display: none; }
+}
+
+@media (max-width: 768px) {
   .project-metrics-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
