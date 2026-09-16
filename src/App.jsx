@@ -111,11 +111,12 @@ export default function App() {
       {/* Footer CTA - Dark Massive Headline with GSAP Masked Reveal */}
       <FooterCTA onShowToast={showToast} />
 
-      {/* Interactive Modal */}
+      {/* Full Viewport Project Page View */}
       {selectedProject && (
         <ProjectModal 
           project={selectedProject} 
           onClose={() => setSelectedProject(null)} 
+          onSelectProject={(proj) => setSelectedProject(proj)}
         />
       )}
 
