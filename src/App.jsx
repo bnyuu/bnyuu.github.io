@@ -47,6 +47,21 @@ export default function App() {
   }, []);
 
   const handleScrollTo = (target) => {
+    if (target === '#about') {
+      const trigger = ScrollTrigger.getById('about-trigger');
+      const targetScroll = trigger ? trigger.end : document.getElementById('about')?.offsetTop;
+      if (targetScroll !== undefined && lenisRef.current) {
+        lenisRef.current.scrollTo(targetScroll, {
+          duration: 1.4,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        });
+        return;
+      } else if (targetScroll !== undefined) {
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        return;
+      }
+    }
+
     if (lenisRef.current) {
       lenisRef.current.scrollTo(target, {
         duration: 1.2,
@@ -82,7 +97,7 @@ export default function App() {
       <Navbar onNavigate={handleScrollTo} />
 
       {/* Hero Section - Dark with GSAP Typography Reveal */}
-      <Hero />
+      <Hero onNavigate={handleScrollTo} />
 
       {/* About Section - Light with GSAP Word-by-Word Scroll Reveal */}
       <AboutSection onNavigate={handleScrollTo} />

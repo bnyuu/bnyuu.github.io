@@ -27,6 +27,7 @@ export default function AboutSection({ onNavigate }) {
       // Pin Section 2 to 100% Viewport and scrub through character typing
       const tl = gsap.timeline({
         scrollTrigger: {
+          id: 'about-trigger',
           trigger: sectionRef.current,
           start: 'top top',
           end: '+=1400', // Scroll distance while pinned
