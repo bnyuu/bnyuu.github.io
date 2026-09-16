@@ -2294,6 +2294,65 @@ body {
   margin: 0;
 }
 
+/* Pure Image Lightbox (No text, pure expanded image) */
+.pure-image-lightbox-wrap {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.pure-expanded-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+
+.pure-image-close-btn {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+
+.pure-image-close-btn:hover {
+  background: #ffffff;
+  color: #080808;
+  transform: scale(1.1);
+  border-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .pure-image-close-btn {
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
 /* Responsive adjustments for full-page project view */
 @media (max-width: 900px) {
   .tilted-gallery-strip {

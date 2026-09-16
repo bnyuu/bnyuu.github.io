@@ -371,7 +371,7 @@ export default function ProjectGalleryGrid({ gallery = [], projectTitle = '' }) 
         </div>
       )}
 
-      {/* Expanded Lightbox Modal (Shared across all projects) */}
+      {/* Expanded Lightbox Modal */}
       <AnimatePresence>
         {activeItem && (
           <motion.div 
@@ -381,36 +381,63 @@ export default function ProjectGalleryGrid({ gallery = [], projectTitle = '' }) 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.div 
-              className="gallery-lightbox-modal"
-              onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.94, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.94, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-            >
-              <div className="lightbox-topbar">
-                <div className="lightbox-meta">
-                  <span className="lightbox-badge">{activeItem.tag}</span>
-                  <span className="lightbox-title">{activeItem.title}</span>
-                </div>
+            {activeItem.imageSrc ? (
+              /* Pure Image Lightbox - No text header/footer, only the expanded photo */
+              <motion.div 
+                className="pure-image-lightbox-wrap"
+                onClick={(e) => e.stopPropagation()}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              >
                 <button 
                   type="button" 
-                  className="lightbox-close-btn"
+                  className="pure-image-close-btn"
                   onClick={() => setActiveItem(null)}
                   aria-label="Close Lightbox"
                 >
-                  <X size={18} />
+                  <X size={20} />
                 </button>
-              </div>
-
-              <div className="lightbox-body">
-                <div className="lightbox-visual-wrap">
-                  {renderVisual(activeItem, true)}
+                <img 
+                  src={activeItem.imageSrc} 
+                  alt={activeItem.title || 'Project showcase photo'} 
+                  className="pure-expanded-img" 
+                />
+              </motion.div>
+            ) : (
+              /* Diagram / Non-photo Lightbox for Project 1 & 3 */
+              <motion.div 
+                className="gallery-lightbox-modal"
+                onClick={(e) => e.stopPropagation()}
+                initial={{ scale: 0.94, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.94, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+              >
+                <div className="lightbox-topbar">
+                  <div className="lightbox-meta">
+                    <span className="lightbox-badge">{activeItem.tag}</span>
+                    <span className="lightbox-title">{activeItem.title}</span>
+                  </div>
+                  <button 
+                    type="button" 
+                    className="lightbox-close-btn"
+                    onClick={() => setActiveItem(null)}
+                    aria-label="Close Lightbox"
+                  >
+                    <X size={18} />
+                  </button>
                 </div>
-                <p className="lightbox-caption">{activeItem.caption}</p>
-              </div>
-            </motion.div>
+
+                <div className="lightbox-body">
+                  <div className="lightbox-visual-wrap">
+                    {renderVisual(activeItem, true)}
+                  </div>
+                  <p className="lightbox-caption">{activeItem.caption}</p>
+                </div>
+              </motion.div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
