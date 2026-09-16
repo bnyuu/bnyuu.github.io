@@ -249,7 +249,7 @@ body {
 }
 
 .hero-main-title {
-  font-size: clamp(78px, min(11.5vw, 15.5vh), 170px);
+  font-size: clamp(56px, min(9.5vw, 13vh), 136px);
   font-weight: 600;
   line-height: 0.82;
   letter-spacing: -0.03em;
@@ -271,7 +271,7 @@ body {
   position: absolute;
   top: 62%;
   transform: translateY(-50%);
-  font-size: clamp(14px, min(2vw, 2.5vh), 26px);
+  font-size: clamp(13px, min(1.7vw, 2.2vh), 22px);
   font-weight: 400;
   letter-spacing: -0.015em;
   text-transform: uppercase;
@@ -282,20 +282,20 @@ body {
 }
 
 .hero-sub-left {
-  right: calc(50% + clamp(175px, 21vw, 320px));
+  right: calc(50% + clamp(150px, 18vw, 275px));
 }
 
 .hero-sub-right {
-  left: calc(50% + clamp(175px, 21vw, 320px));
+  left: calc(50% + clamp(150px, 18vw, 275px));
 }
 
 /* Portrait Image: Lowered so hair subtly touches baseline of KUNCORO without obscuring letters */
 .hero-image-wrapper {
   position: relative;
-  width: clamp(460px, min(56vw, 66vh), 760px);
+  width: clamp(380px, min(48vw, 58vh), 660px);
   max-width: 96vw;
   height: auto;
-  margin-top: clamp(-95px, -7vw, -40px);
+  margin-top: clamp(-75px, -5.5vw, -30px);
   margin-bottom: 0;
   z-index: 2;
   pointer-events: none;
@@ -313,45 +313,65 @@ body {
   display: block;
 }
 
+/* Responsive adjustments for narrow/compact desktop width (prevent text growing too big on tall/narrow screens) */
+@media (max-width: 1150px) and (min-width: 769px) {
+  .hero-main-title {
+    font-size: clamp(52px, 8.8vw, 108px);
+  }
+  .hero-image-wrapper {
+    width: clamp(340px, 45vw, 520px);
+    margin-top: clamp(-55px, -5vw, -25px);
+  }
+  .hero-sub-flank {
+    font-size: clamp(12px, 1.5vw, 17px);
+  }
+  .hero-sub-left {
+    right: calc(50% + clamp(130px, 16vw, 220px));
+  }
+  .hero-sub-right {
+    left: calc(50% + clamp(130px, 16vw, 220px));
+  }
+}
+
 /* Responsive adjustments for short / compact viewport heights */
 @media (max-height: 750px) and (min-width: 769px) {
   .hero-main-title {
-    font-size: clamp(58px, 13vh, 110px);
+    font-size: clamp(52px, 12.5vh, 102px);
     line-height: 0.82;
   }
   .hero-image-wrapper {
-    width: clamp(360px, 58vh, 500px);
-    margin-top: clamp(-60px, -6vh, -25px);
+    width: clamp(330px, 54vh, 460px);
+    margin-top: clamp(-50px, -5vh, -20px);
   }
   .hero-sub-flank {
-    font-size: clamp(13px, 2.2vh, 18px);
+    font-size: clamp(12px, 2vh, 17px);
     top: 61%;
   }
   .hero-sub-left {
-    right: calc(50% + clamp(145px, 18vw, 250px));
+    right: calc(50% + clamp(135px, 17vw, 230px));
   }
   .hero-sub-right {
-    left: calc(50% + clamp(145px, 18vw, 250px));
+    left: calc(50% + clamp(135px, 17vw, 230px));
   }
 }
 
 @media (max-height: 620px) and (min-width: 769px) {
   .hero-main-title {
-    font-size: clamp(46px, 11.5vh, 75px);
+    font-size: clamp(42px, 11vh, 70px);
   }
   .hero-image-wrapper {
-    width: clamp(280px, 50vh, 370px);
-    margin-top: -20px;
+    width: clamp(260px, 48vh, 340px);
+    margin-top: -15px;
   }
   .hero-sub-flank {
     font-size: clamp(11px, 1.8vh, 14px);
     top: 60%;
   }
   .hero-sub-left {
-    right: calc(50% + clamp(120px, 15vw, 190px));
+    right: calc(50% + clamp(115px, 14vw, 170px));
   }
   .hero-sub-right {
-    left: calc(50% + clamp(120px, 15vw, 190px));
+    left: calc(50% + clamp(115px, 14vw, 170px));
   }
 }
 
