@@ -269,7 +269,7 @@ body {
 /* Flanking Subtitles: Symmetrically positioned on left & right of Banu's face */
 .hero-sub-flank {
   position: absolute;
-  top: 58%;
+  top: 62%;
   transform: translateY(-50%);
   font-size: clamp(14px, min(2vw, 2.5vh), 26px);
   font-weight: 400;
@@ -289,13 +289,13 @@ body {
   left: calc(50% + clamp(175px, 21vw, 320px));
 }
 
-/* Portrait Image: Unified with title, hair neatly overlapping the word KUNCORO */
+/* Portrait Image: Lowered so hair subtly touches baseline of KUNCORO without obscuring letters */
 .hero-image-wrapper {
   position: relative;
-  width: clamp(480px, min(58vw, 68vh), 800px);
+  width: clamp(460px, min(56vw, 66vh), 760px);
   max-width: 96vw;
   height: auto;
-  margin-top: clamp(-220px, -16vw, -110px);
+  margin-top: clamp(-95px, -7vw, -40px);
   margin-bottom: 0;
   z-index: 2;
   pointer-events: none;
@@ -316,42 +316,42 @@ body {
 /* Responsive adjustments for short / compact viewport heights */
 @media (max-height: 750px) and (min-width: 769px) {
   .hero-main-title {
-    font-size: clamp(60px, 13.5vh, 115px);
+    font-size: clamp(58px, 13vh, 110px);
     line-height: 0.82;
   }
   .hero-image-wrapper {
-    width: clamp(380px, 60vh, 540px);
-    margin-top: clamp(-140px, -13vh, -75px);
+    width: clamp(360px, 58vh, 500px);
+    margin-top: clamp(-60px, -6vh, -25px);
   }
   .hero-sub-flank {
-    font-size: clamp(13px, 2.2vh, 19px);
-    top: 58%;
+    font-size: clamp(13px, 2.2vh, 18px);
+    top: 61%;
   }
   .hero-sub-left {
-    right: calc(50% + clamp(150px, 19vw, 260px));
+    right: calc(50% + clamp(145px, 18vw, 250px));
   }
   .hero-sub-right {
-    left: calc(50% + clamp(150px, 19vw, 260px));
+    left: calc(50% + clamp(145px, 18vw, 250px));
   }
 }
 
 @media (max-height: 620px) and (min-width: 769px) {
   .hero-main-title {
-    font-size: clamp(48px, 12vh, 80px);
+    font-size: clamp(46px, 11.5vh, 75px);
   }
   .hero-image-wrapper {
-    width: clamp(300px, 54vh, 400px);
-    margin-top: -65px;
+    width: clamp(280px, 50vh, 370px);
+    margin-top: -20px;
   }
   .hero-sub-flank {
-    font-size: clamp(12px, 2vh, 15px);
-    top: 57%;
+    font-size: clamp(11px, 1.8vh, 14px);
+    top: 60%;
   }
   .hero-sub-left {
-    right: calc(50% + clamp(125px, 16vw, 200px));
+    right: calc(50% + clamp(120px, 15vw, 190px));
   }
   .hero-sub-right {
-    left: calc(50% + clamp(125px, 16vw, 200px));
+    left: calc(50% + clamp(120px, 15vw, 190px));
   }
 }
 
