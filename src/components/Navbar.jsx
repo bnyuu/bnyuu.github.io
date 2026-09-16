@@ -49,6 +49,15 @@ export default function Navbar({ onNavigate }) {
           </li>
           <li>
             <a 
+              href="#education" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('education'); }} 
+              className="nav-link"
+            >
+              Education
+            </a>
+          </li>
+          <li>
+            <a 
               href="#works" 
               onClick={(e) => { e.preventDefault(); scrollToSection('works'); }} 
               className="nav-link"

@@ -821,12 +821,290 @@ body {
 }
 
 /* ==========================================================================
+   Education / Academic Foundation Section
+   ========================================================================== */
+.education-section {
+  background-color: var(--color-bg-dark);
+  padding: clamp(60px, 8vh, 100px) clamp(24px, 6vw, 96px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.education-inner-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 44px);
+}
+
+.education-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.education-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--card-da-highlight);
+}
+
+.education-headline {
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.education-subtitle {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 720px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Primary Degree Showcase Card */
+.education-main-card {
+  position: relative;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  padding: clamp(28px, 3.5vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-main-card:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.education-card-ambient {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(184, 255, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.main-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.degree-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.degree-level {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--card-ml-highlight);
+}
+
+.degree-name {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.degree-focus {
+  font-size: clamp(14px, 1.3vw, 17px);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.degree-focus strong {
+  color: #ffffff;
+}
+
+.degree-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  font-size: 12px;
+  font-weight: 500;
+  color: #00ff88;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.degree-summary {
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  max-width: 960px;
+}
+
+.degree-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.education-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: -0.2px;
+}
+
+/* Academic Pillars 3-Column Grid */
+.academic-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.pillar-card {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s var(--transition-smooth), border-color 0.3s ease, background 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(24, 24, 24, 0.85);
+}
+
+.pillar-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.pillar-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.pillar-icon-box.tag-ml {
+  background: rgba(184, 255, 255, 0.1);
+  border-color: rgba(184, 255, 255, 0.3);
+  color: var(--card-ml-highlight);
+}
+
+.pillar-icon-box.tag-ai {
+  background: rgba(232, 254, 167, 0.1);
+  border-color: rgba(232, 254, 167, 0.3);
+  color: var(--card-da-highlight);
+}
+
+.pillar-icon-box.tag-re {
+  background: rgba(254, 175, 175, 0.1);
+  border-color: rgba(254, 175, 175, 0.3);
+  color: var(--card-re-highlight);
+}
+
+.pillar-tag {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pillar-tag.tag-ml { color: var(--card-ml-highlight); }
+.pillar-tag.tag-ai { color: var(--card-da-highlight); }
+.pillar-tag.tag-re { color: var(--card-re-highlight); }
+
+.pillar-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.pillar-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* ==========================================================================
    Selected Works Section
    ========================================================================== */
 .works-section {
   background-color: var(--color-bg-dark);
-  padding: clamp(70px, 9vh, 120px) clamp(24px, 6vw, 96px);
+  padding: clamp(60px, 8vh, 100px) clamp(24px, 6vw, 96px);
   width: 100%;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1358,6 +1636,28 @@ body {
   .expertise-tech-card {
     padding: 20px;
     border-radius: 28px;
+  }
+
+  .education-section {
+    padding: 60px 20px;
+  }
+  .education-headline {
+    font-size: 28px;
+  }
+  .education-main-card {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+  .degree-name {
+    font-size: 20px;
+  }
+  .academic-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pillar-card {
+    padding: 20px 18px;
+    border-radius: 18px;
   }
 
   .works-section {
