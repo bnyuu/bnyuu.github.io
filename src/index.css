@@ -820,187 +820,8 @@ body {
   transform: rotate(45deg);
 }
 
-/* ==========================================================================
-   Education / Academic Foundation Section
-   ========================================================================== */
-.education-section {
-  background-color: var(--color-bg-dark);
-  padding: clamp(60px, 8vh, 100px) clamp(24px, 6vw, 96px);
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
 
-.education-inner-container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(28px, 4vh, 44px);
-}
 
-.education-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.education-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--card-da-highlight);
-}
-
-.education-headline {
-  font-size: clamp(30px, 3.5vw, 48px);
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.education-subtitle {
-  font-size: clamp(15px, 1.4vw, 18px);
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 720px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Primary Degree Showcase Card */
-.education-main-card {
-  position: relative;
-  background: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 28px;
-  padding: clamp(28px, 3.5vw, 44px);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-main-card:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-}
-
-.education-card-ambient {
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(184, 255, 255, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.main-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.degree-title-block {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.degree-level {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--card-ml-highlight);
-}
-
-.degree-name {
-  font-size: clamp(22px, 2.4vw, 32px);
-  font-weight: 600;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.degree-focus {
-  font-size: clamp(14px, 1.3vw, 17px);
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
-
-.degree-focus strong {
-  color: #ffffff;
-}
-
-.degree-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(0, 255, 136, 0.08);
-  border: 1px solid rgba(0, 255, 136, 0.25);
-  font-size: 12px;
-  font-weight: 500;
-  color: #00ff88;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #00ff88;
-  box-shadow: 0 0 8px #00ff88;
-  animation: pulse-dot 2s infinite ease-in-out;
-}
-
-.degree-summary {
-  font-size: clamp(14px, 1.25vw, 16px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  max-width: 960px;
-}
-
-.degree-tags-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.education-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: -0.2px;
-}
 
 /* ==========================================================================
    Selected Works Section
@@ -1253,106 +1074,566 @@ body {
 }
 
 /* ==========================================================================
-   Project Detail Modal
+   Project Detail Modal (Strict Monochrome & Architectural Blueprint Layout)
    ========================================================================== */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: clamp(16px, 3vh, 32px) clamp(16px, 3vw, 24px);
+  box-sizing: border-box;
 }
 
-.modal-content {
-  background: #141414;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 32px;
-  max-width: 760px;
+.modal-content.modal-monochrome {
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 28px;
+  max-width: 820px;
   width: 100%;
   max-height: 88vh;
   overflow-y: auto;
-  color: #fffdfa;
-  padding: clamp(28px, 4vw, 44px);
+  color: #ffffff;
+  padding: clamp(24px, 4vw, 40px);
   position: relative;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar for Modal */
+.modal-content.modal-monochrome::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content.modal-monochrome::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+.modal-content.modal-monochrome::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+.modal-content.modal-monochrome::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .modal-close-btn {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
+  top: clamp(18px, 3vw, 24px);
+  right: clamp(18px, 3vw, 24px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   color: #ffffff;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  z-index: 10;
 }
 
 .modal-close-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: #ffffff;
+  color: #080808;
   transform: rotate(90deg);
 }
 
-.modal-header-tag {
-  display: inline-block;
-  padding: 5px 14px;
-  border-radius: 99px;
-  font-size: 13px;
-  margin-bottom: 14px;
+.modal-header-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 40px;
+}
+
+.modal-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modal-mono-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #080808;
+  text-transform: uppercase;
+}
+
+.modal-mono-tag {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
 }
 
 .modal-title {
-  font-size: clamp(24px, 3vw, 34px);
+  font-size: clamp(22px, 2.8vw, 32px);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  color: #ffffff;
+  margin: 0;
 }
 
+.modal-summary-text {
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+/* Key Metrics Grid */
+.modal-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.modal-metric-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.modal-metric-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.metric-card-val {
+  font-size: clamp(18px, 1.9vw, 24px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.metric-card-lbl {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Visual Blueprint / Media Slot */
+.modal-visual-slot {
+  background: #080808;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.visual-slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.slot-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.slot-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.visual-slot-body {
+  padding: clamp(18px, 3vw, 26px);
+  display: flex;
+  flex-direction: column;
+}
+
+.mono-diagram-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.mono-diag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+  padding-bottom: 10px;
+}
+
+/* Project 1: Feature Importance Chart */
+.mono-chart-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mono-bar-row {
+  display: grid;
+  grid-template-columns: 170px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.bar-label {
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+.bar-val {
+  text-align: right;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 11px;
+}
+
+/* Project 2: SmartSawit IoT Telemetry Grid */
+.mono-iot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.iot-metric-tile {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tile-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tile-val {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tile-status {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
+}
+
+/* Project 3: SEM Path Visualizer */
+.mono-sem-visual {
+  display: grid;
+  grid-template-columns: 140px 1fr 180px;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.sem-node {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: center;
+}
+
+.sem-node.outcome {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.node-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.node-sub {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.sem-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sem-path-line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.path-text {
+  font-size: 10.5px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.arrow-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.arrow-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  border-left: 6px solid rgba(255, 255, 255, 0.8);
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+}
+
+.sem-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Highlights List */
 .modal-section {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .modal-section-title {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
 }
 
-.modal-section-p {
-  font-size: clamp(15px, 1.4vw, 17px);
+.modal-highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(13.5px, 1.25vw, 15px);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.85);
 }
 
+.highlight-check {
+  color: #ffffff;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* Hardware BOM Table */
+.bom-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bom-total-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hardware-bom-table-wrap {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hardware-bom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.hardware-bom-table th {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hardware-bom-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hardware-bom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.hardware-bom-table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.bom-index {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: monospace;
+  font-size: 12px;
+  width: 35px;
+}
+
+.bom-name {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.bom-cost {
+  text-align: right;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: monospace;
+}
+
+/* Tech Stack Monochrome Pills */
 .modal-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 10px;
 }
 
-.modal-pill {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 5px 12px;
-  border-radius: 99px;
-  font-size: 13px;
+.modal-mono-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
   color: #ffffff;
+  letter-spacing: -0.2px;
+  transition: all 0.2s ease;
+}
+
+.modal-mono-pill:hover {
+  background: #ffffff;
+  color: #080808;
+  border-color: #ffffff;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+  .modal-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .mono-bar-row {
+    grid-template-columns: 110px 1fr 40px;
+    font-size: 11px;
+  }
+  .mono-iot-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .mono-sem-visual {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .sem-arrows {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .arrow-line {
+    display: none;
+  }
 }
 
 /* ==========================================================================
@@ -1544,19 +1825,7 @@ body {
     border-radius: 28px;
   }
 
-  .education-section {
-    padding: 60px 20px;
-  }
-  .education-headline {
-    font-size: 28px;
-  }
-  .education-main-card {
-    padding: 24px 18px;
-    border-radius: 22px;
-  }
-  .degree-name {
-    font-size: 20px;
-  }
+
 
   .works-section {
     padding: 64px 20px;

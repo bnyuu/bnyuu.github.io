@@ -7,7 +7,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import CoreExpertise from './components/CoreExpertise';
-import EducationSection from './components/EducationSection';
 import SelectedWorks from './components/SelectedWorks';
 import FooterCTA from './components/FooterCTA';
 import ProjectModal from './components/ProjectModal';
@@ -85,7 +84,7 @@ export default function App() {
     setSelectedProject({
       title: expertise.title,
       category: expertise.category || 'Core Expertise Area',
-      tagClass: expertise.id === 'ml' ? 'tag-ml' : expertise.id === 'da' ? 'tag-ai' : 'tag-re',
+      tagClass: 'tag-mono',
       summary: expertise.description,
       details: expertise.details || `Specialized focus in ${expertise.title} with industry standard methodologies, research-backed model architectures, and production-ready deployments.`,
       stack: expertise.stack || ['Python', 'Scikit-learn', 'IBM SPSS']
@@ -105,9 +104,6 @@ export default function App() {
 
       {/* Core Expertise Section - Cream with GSAP Parallax & Card Lift */}
       <CoreExpertise onSelectExpertise={handleSelectExpertise} />
-
-      {/* Academic Foundation / Education Section - Dark High-Tech Cards */}
-      <EducationSection />
 
       {/* Selected Works - Dark List View with GSAP Stagger Reveal */}
       <SelectedWorks onSelectProject={(project) => setSelectedProject(project)} />
