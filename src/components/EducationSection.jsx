@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,10 +62,6 @@ export default function EducationSection() {
       <div className="education-inner-container">
         {/* Section Header */}
         <div ref={headlineRef} className="education-header">
-          <div className="education-badge">
-            <GraduationCap size={16} />
-            <span>ACADEMIC TRAJECTORY</span>
-          </div>
           <h2 className="education-headline">
             ACADEMIC FOUNDATION
           </h2>
