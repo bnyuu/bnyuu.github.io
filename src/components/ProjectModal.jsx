@@ -84,12 +84,6 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
               <span>BACK TO WORKS</span>
             </button>
 
-            <div className="topbar-project-info">
-              <span className="topbar-num">{project.number || 'PROJECT'}</span>
-              <span className="topbar-divider">/</span>
-              <span className="topbar-title">{project.title}</span>
-            </div>
-
             <button 
               type="button" 
               className="page-close-pill" 
