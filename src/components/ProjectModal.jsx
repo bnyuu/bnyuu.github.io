@@ -108,10 +108,6 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
                 <span className={`work-tag ${project.tagClass}`}>
                   {project.tag || project.category}
                 </span>
-                <span className="status-indicator-badge">
-                  <span className="live-pulse-dot" />
-                  CASE STUDY COMPLETE
-                </span>
               </div>
 
               <h1 className="project-headline">
