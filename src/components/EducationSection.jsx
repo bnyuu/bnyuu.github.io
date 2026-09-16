@@ -1,39 +1,14 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap, BookOpen, Brain, Sparkles, Award } from 'lucide-react';
+import { GraduationCap, Award } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const academicPillars = [
-  {
-    icon: Brain,
-    title: 'Data Science & Machine Learning',
-    description: 'Specialized in predictive modeling, statistical learning algorithms, deep neural architectures, and model explainability (SHAP).',
-    tag: 'Technical Core',
-    tagClass: 'tag-ml'
-  },
-  {
-    icon: Sparkles,
-    title: 'Business Information Systems',
-    description: 'Integrating algorithmic data workflows with strategic business architectures, database modeling, and enterprise intelligence.',
-    tag: 'Strategic Application',
-    tagClass: 'tag-ai'
-  },
-  {
-    icon: BookOpen,
-    title: 'Quantitative Research & Analytics',
-    description: 'Empirical statistical methodology, hypothesis testing, Structural Equation Modeling (SEM), and ethical AI adoption studies.',
-    tag: 'Academic Rigor',
-    tagClass: 'tag-re'
-  }
-];
 
 export default function EducationSection() {
   const sectionRef = useRef(null);
   const headlineRef = useRef(null);
   const mainCardRef = useRef(null);
-  const pillarCardsRef = useRef([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -67,24 +42,6 @@ export default function EducationSection() {
           scrollTrigger: {
             trigger: mainCardRef.current,
             start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      );
-
-      // Pillars stagger entrance
-      gsap.fromTo(
-        pillarCardsRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.85,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 70%',
             toggleActions: 'play none none none'
           }
         }
@@ -148,30 +105,6 @@ export default function EducationSection() {
             <span className="education-tag">Quantitative Research (SEM)</span>
             <span className="education-tag">Business Intelligence</span>
           </div>
-        </div>
-
-        {/* Academic Pillars Grid */}
-        <div className="academic-pillars-grid">
-          {academicPillars.map((pillar, index) => {
-            const Icon = pillar.icon;
-            return (
-              <div
-                key={index}
-                ref={(el) => (pillarCardsRef.current[index] = el)}
-                className="pillar-card"
-              >
-                <div className="pillar-card-top">
-                  <div className={`pillar-icon-box ${pillar.tagClass}`}>
-                    <Icon size={20} />
-                  </div>
-                  <span className={`pillar-tag ${pillar.tagClass}`}>{pillar.tag}</span>
-                </div>
-                
-                <h4 className="pillar-title">{pillar.title}</h4>
-                <p className="pillar-desc">{pillar.description}</p>
-              </div>
-            );
-          })}
         </div>
       </div>
     </section>
