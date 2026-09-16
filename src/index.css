@@ -1051,40 +1051,21 @@ body {
   box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
 }
 
-/* Footer Bottom Bar */
+/* Footer Bottom Bar (Centered Copyright) */
 .footer-bottom-bar {
   width: 100%;
   max-width: 1200px;
   margin-top: 0;
-  padding: 20px 0 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 24px 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   color: rgba(255, 255, 255, 0.5);
   font-size: 13px;
-  flex-wrap: wrap;
-  gap: 16px;
+  letter-spacing: -0.2px;
   z-index: 10;
-}
-
-.footer-social-links {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.footer-social-link {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  transition: color 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.footer-social-link:hover {
-  color: #ffffff;
 }
 
 /* ==========================================================================
