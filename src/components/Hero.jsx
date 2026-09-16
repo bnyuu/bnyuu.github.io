@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ChevronDown } from 'lucide-react';
 import banuHeroImg from '../assets/images/Image-Banu-Hero.png';
 
-export default function Hero() {
+export default function Hero({ onNavigate }) {
   const heroRef = useRef(null);
   const title1Ref = useRef(null);
   const title2Ref = useRef(null);
@@ -10,6 +11,7 @@ export default function Hero() {
   const subRightRef = useRef(null);
   const mobileSubRef = useRef(null);
   const imageRef = useRef(null);
+  const scrollIndicatorRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -37,10 +39,29 @@ export default function Hero() {
         { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: 'power3.out' },
         '-=0.9'
       );
+
+      // Scroll Indicator entrance
+      tl.fromTo(
+        scrollIndicatorRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out' },
+        '-=0.5'
+      );
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
+
+  const handleScrollDown = () => {
+    if (onNavigate) {
+      onNavigate('#about');
+    } else {
+      const aboutEl = document.getElementById('about');
+      if (aboutEl) {
+        aboutEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <section id="hero" className="hero-section" ref={heroRef} data-node-id="8:151" data-name="Hero">
@@ -97,6 +118,30 @@ export default function Hero() {
           />
         </div>
       </div>
+
+      {/* Interactive Scroll Indicator: Animated Mouse on Desktop, Bouncing Down Arrow on Mobile */}
+      <button
+        ref={scrollIndicatorRef}
+        type="button"
+        className="hero-scroll-indicator"
+        onClick={handleScrollDown}
+        aria-label="Scroll down to About section"
+      >
+        {/* Desktop Mouse Scroll Animation */}
+        <div className="scroll-indicator-desktop">
+          <div className="scroll-mouse-track">
+            <div className="scroll-mouse-wheel" />
+          </div>
+          <span className="scroll-text">SCROLL</span>
+        </div>
+
+        {/* Mobile Bouncing Down Arrow */}
+        <div className="scroll-indicator-mobile">
+          <div className="scroll-arrow-wrap">
+            <ChevronDown size={20} className="scroll-arrow-icon" />
+          </div>
+        </div>
+      </button>
     </section>
   );
 }

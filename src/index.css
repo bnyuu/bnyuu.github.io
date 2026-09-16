@@ -376,6 +376,118 @@ body {
 }
 
 /* ==========================================================================
+   Hero Scroll Indicator (Desktop Animated Mouse & Mobile Bouncing Arrow)
+   ========================================================================== */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: clamp(14px, 2.5vh, 26px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-light);
+  opacity: 0.75;
+  transition: opacity 0.3s var(--transition-smooth), transform 0.3s var(--transition-smooth);
+  padding: 6px 12px;
+  outline: none;
+  user-select: none;
+}
+
+.hero-scroll-indicator:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(3px);
+}
+
+/* Desktop Mouse Track & Animated Wheel */
+.scroll-indicator-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.scroll-mouse-track {
+  width: 18px;
+  height: 28px;
+  border: 1.4px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.scroll-mouse-wheel {
+  width: 2.5px;
+  height: 5px;
+  background: #ffffff;
+  border-radius: 2px;
+  animation: mouse-scroll-dot 1.8s infinite ease-in-out;
+}
+
+@keyframes mouse-scroll-dot {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  60% {
+    opacity: 0.1;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.scroll-text {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease;
+}
+
+.hero-scroll-indicator:hover .scroll-text {
+  color: #ffffff;
+}
+
+/* Mobile Down Arrow */
+.scroll-indicator-mobile {
+  display: none;
+}
+
+@keyframes arrow-bounce-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* Hide scroll indicator when short height causes collision with portrait */
+@media (max-height: 600px) and (min-width: 769px) {
+  .hero-scroll-indicator {
+    opacity: 0.4;
+    bottom: 8px;
+  }
+  .scroll-text {
+    display: none;
+  }
+}
+
+/* ==========================================================================
    Section Subheadline / About (100% Viewport Pinned Typing Section)
    ========================================================================== */
 .about-section {
@@ -1185,6 +1297,33 @@ body {
     margin-bottom: 0;
     align-self: center;
     z-index: 2;
+  }
+
+  /* Mobile Scroll Down Indicator (Bouncing Arrow) */
+  .scroll-indicator-desktop {
+    display: none !important;
+  }
+  .scroll-indicator-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .scroll-arrow-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: arrow-bounce-down 1.6s infinite ease-in-out;
+  }
+  .hero-scroll-indicator {
+    bottom: clamp(12px, 2.2vh, 20px);
   }
 
   .about-section {
