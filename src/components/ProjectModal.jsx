@@ -15,6 +15,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
+import ProjectGalleryGrid from './ProjectGalleryGrid';
 
 export default function ProjectModal({ project, onClose, onSelectProject }) {
   const containerRef = useRef(null);
@@ -251,6 +252,16 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
                 </div>
               </div>
             </section>
+
+            {/* Project Image & Architecture Showcase Grid */}
+            {project.gallery && project.gallery.length > 0 && (
+              <section className="project-section-block">
+                <ProjectGalleryGrid 
+                  gallery={project.gallery} 
+                  projectTitle={project.title} 
+                />
+              </section>
+            )}
 
             {/* Key Highlights & Methodology */}
             {project.highlights && project.highlights.length > 0 && (

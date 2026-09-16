@@ -20,7 +20,37 @@ export const projectsData = [
       { label: 'Dataset Size', value: '50,000 Rows' }
     ],
     stack: ['Python', 'Scikit-learn', 'Random Forest', 'SMOTE', 'SHAP (XAI)', 'Pandas', 'Streamlit'],
-    visualType: 'churn-metrics'
+    visualType: 'churn-metrics',
+    gallery: [
+      {
+        id: 'p1-g1',
+        title: 'Model Evaluation & ROC-AUC Curve',
+        caption: 'Receiver Operating Characteristic (AUC = 0.923) demonstrating superior sensitivity on minority churn class.',
+        tag: 'ROC / AUC ANALYSIS',
+        type: 'roc-curve'
+      },
+      {
+        id: 'p1-g2',
+        title: 'SHAP Feature Importance Summary',
+        caption: 'XAI extraction pinpointing Customer Service Calls and LTV as primary drivers of turnover.',
+        tag: 'EXPLAINABLE AI',
+        type: 'shap-summary'
+      },
+      {
+        id: 'p1-g3',
+        title: 'SMOTE Class Resampling Distribution',
+        caption: 'Synthetic Minority Over-sampling applied strictly to training fold to eliminate bias and leakage.',
+        tag: 'DATA PREPROCESSING',
+        type: 'smote-dist'
+      },
+      {
+        id: 'p1-g4',
+        title: 'Confusion Matrix & F1-Score Breakdown',
+        caption: 'Classification breakdown verifying 90.34% accuracy and 0.828 macro F1-score across 50,000 profiles.',
+        tag: 'PERFORMANCE MATRIX',
+        type: 'conf-matrix'
+      }
+    ]
   },
   {
     id: '02',
@@ -64,7 +94,37 @@ export const projectsData = [
       ]
     },
     stack: ['ESP32', 'C++ / Arduino', 'DHT11 Sensor', 'Soil Hygrometer', 'Python', 'FastAPI', 'React', 'Time-Series Telemetry'],
-    visualType: 'iot-schematic'
+    visualType: 'iot-schematic',
+    gallery: [
+      {
+        id: 'p2-g1',
+        title: 'Hardware Sensor & ESP32 Schematic',
+        caption: 'Pinout architecture interfacing DHT11, Soil Hygrometer, LCD1602 I2C, and 5V Dual Relay.',
+        tag: 'CIRCUIT SCHEMATIC',
+        type: 'iot-circuit'
+      },
+      {
+        id: 'p2-g2',
+        title: 'Web Telemetry Dashboard UI',
+        caption: 'Live graphical time-series telemetry interface with sub-500ms latency stream.',
+        tag: 'DASHBOARD UI',
+        type: 'iot-dashboard'
+      },
+      {
+        id: 'p2-g3',
+        title: 'Automated AI Irrigation Logic Flow',
+        caption: 'Closed-loop automated irrigation system triggering 5V solenoid pumps based on sensor thresholds.',
+        tag: 'SYSTEM LOGIC',
+        type: 'iot-logic'
+      },
+      {
+        id: 'p2-g4',
+        title: 'Physical Prototype & Palm Container',
+        caption: 'Experimental setup in container with 4mm/8mm tubing, pump reservoir, and oil palm seedlings.',
+        tag: 'FIELD PROTOTYPE',
+        type: 'iot-prototype'
+      }
+    ]
   },
   {
     id: '03',
@@ -86,6 +146,36 @@ export const projectsData = [
       { label: 'Global Initiative', value: 'UN SDG 4' }
     ],
     stack: ['IBM SPSS', 'Structural Equation Modeling (SEM)', 'Multivariate Regression', 'Survey Methodology', 'Hypothesis Testing', 'Python'],
-    visualType: 'research-sem'
+    visualType: 'research-sem',
+    gallery: [
+      {
+        id: 'p3-g1',
+        title: 'SEM Path Model Diagram',
+        caption: 'Structural Equation Model showing standardized regression weights (β=0.918 & β=0.919, p<0.001).',
+        tag: 'STATISTICAL MODEL',
+        type: 'sem-model'
+      },
+      {
+        id: 'p3-g2',
+        title: 'Regression Variance Analysis (R² = 0.843)',
+        caption: 'Explained variance breakdown across Academic Integrity and Digital Trust constructs.',
+        tag: 'SPSS REGRESSION',
+        type: 'spss-variance'
+      },
+      {
+        id: 'p3-g3',
+        title: 'Demographic Cohort Distribution (N = 213)',
+        caption: 'Sample distribution of university undergraduates across faculties in Bekasi City.',
+        tag: 'SAMPLE DEMOGRAPHICS',
+        type: 'sample-demographics'
+      },
+      {
+        id: 'p3-g4',
+        title: 'Conceptual Framework & UN SDG 4',
+        caption: 'Mapping generative AI literacy dimensions to ethical educational metrics under UN SDG 4.',
+        tag: 'RESEARCH FRAMEWORK',
+        type: 'research-framework'
+      }
+    ]
   }
 ];
