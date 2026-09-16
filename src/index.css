@@ -1656,6 +1656,55 @@ body {
   object-fit: contain;
 }
 
+/* Real Activity Photo Container */
+.gallery-photo-container {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  max-height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  background: #000000;
+}
+
+.gallery-activity-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s var(--transition-smooth), filter 0.3s ease;
+  filter: contrast(1.05);
+}
+
+.gallery-card:hover .gallery-activity-img {
+  transform: scale(1.06);
+  filter: contrast(1.12);
+}
+
+.lightbox-photo-container {
+  width: 100%;
+  max-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000000;
+}
+
+.lightbox-activity-img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
 .gallery-card-bottom {
   padding: 16px 18px;
   display: flex;

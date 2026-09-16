@@ -1,3 +1,8 @@
+import smartAppImg1 from '../assets/images/SmartApp/IMG_4419.JPG';
+import smartAppImg2 from '../assets/images/SmartApp/IMG_4448.JPG';
+import smartAppImg3 from '../assets/images/SmartApp/IMG_4459.JPG';
+import smartAppImg4 from '../assets/images/SmartApp/IMG_4483.JPG';
+
 export const projectsData = [
   {
     id: '01',
@@ -98,31 +103,35 @@ export const projectsData = [
     gallery: [
       {
         id: 'p2-g1',
-        title: 'Hardware Sensor & ESP32 Schematic',
-        caption: 'Pinout architecture interfacing DHT11, Soil Hygrometer, LCD1602 I2C, and 5V Dual Relay.',
-        tag: 'CIRCUIT SCHEMATIC',
-        type: 'iot-circuit'
+        title: 'Hardware Circuit & Sensor Assembly',
+        caption: 'Proses perakitan dan konfigurasi modul ESP32, relay 5V, serta sensor DHT11 & Soil Hygrometer.',
+        tag: 'DOKUMENTASI PERAKITAN',
+        type: 'image',
+        imageSrc: smartAppImg1
       },
       {
         id: 'p2-g2',
-        title: 'Web Telemetry Dashboard UI',
-        caption: 'Live graphical time-series telemetry interface with sub-500ms latency stream.',
-        tag: 'DASHBOARD UI',
-        type: 'iot-dashboard'
+        title: 'Testing & Kalibrasi Sensor di Lapangan',
+        caption: 'Uji coba pembacaan nilai kelembaban tanah dan respon aktuasi pompa irigasi secara real-time.',
+        tag: 'UJI COBA & KALIBRASI',
+        type: 'image',
+        imageSrc: smartAppImg2
       },
       {
         id: 'p2-g3',
-        title: 'Automated AI Irrigation Logic Flow',
-        caption: 'Closed-loop automated irrigation system triggering 5V solenoid pumps based on sensor thresholds.',
-        tag: 'SYSTEM LOGIC',
-        type: 'iot-logic'
+        title: 'Integrasi Sistem & Jalur Perpipaan Irigasi',
+        caption: 'Pemasangan jalur perpipaan 4mm & 8mm pada prototype wadah bibit kelapa sawit.',
+        tag: 'INTEGRASI PROTOTYPE',
+        type: 'image',
+        imageSrc: smartAppImg3
       },
       {
         id: 'p2-g4',
-        title: 'Physical Prototype & Palm Container',
-        caption: 'Experimental setup in container with 4mm/8mm tubing, pump reservoir, and oil palm seedlings.',
-        tag: 'FIELD PROTOTYPE',
-        type: 'iot-prototype'
+        title: 'Demonstrasi Sistem SmartSawit Keseluruhan',
+        caption: 'Dokumentasi implementasi lengkap sistem monitoring cerdas berbasis IoT dan AI assistant.',
+        tag: 'IMPLEMENTASI SISTEM',
+        type: 'image',
+        imageSrc: smartAppImg4
       }
     ]
   },

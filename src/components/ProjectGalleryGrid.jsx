@@ -18,8 +18,21 @@ export default function ProjectGalleryGrid({ gallery = [], projectTitle = '' }) 
 
   if (!gallery || gallery.length === 0) return null;
 
-  const renderVisual = (type) => {
-    switch (type) {
+  const renderVisual = (item, isLightbox = false) => {
+    if (item?.imageSrc) {
+      return (
+        <div className={`gallery-photo-container ${isLightbox ? 'lightbox-photo-container' : ''}`}>
+          <img 
+            src={item.imageSrc} 
+            alt={item.title} 
+            className={`gallery-activity-img ${isLightbox ? 'lightbox-activity-img' : ''}`}
+            loading="lazy" 
+          />
+        </div>
+      );
+    }
+
+    switch (item?.type) {
       // --- Project 1: Machine Learning ---
       case 'roc-curve':
         return (
@@ -342,7 +355,7 @@ export default function ProjectGalleryGrid({ gallery = [], projectTitle = '' }) 
 
             {/* Visual Screen / Canvas */}
             <div className="gallery-card-visual">
-              {renderVisual(item.type)}
+              {renderVisual(item, false)}
             </div>
 
             {/* Card Description */}
@@ -388,7 +401,7 @@ export default function ProjectGalleryGrid({ gallery = [], projectTitle = '' }) 
 
               <div className="lightbox-body">
                 <div className="lightbox-visual-wrap">
-                  {renderVisual(activeItem.type)}
+                  {renderVisual(activeItem, true)}
                 </div>
                 <p className="lightbox-caption">{activeItem.caption}</p>
               </div>
