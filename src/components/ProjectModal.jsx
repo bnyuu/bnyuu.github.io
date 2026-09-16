@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowLeft, 
   ArrowRight, 
-  X, 
   CheckCircle2, 
   Cpu, 
   BarChart3, 
@@ -83,16 +82,6 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
             >
               <ArrowLeft size={18} />
               <span>BACK TO WORKS</span>
-            </button>
-
-            <button 
-              type="button" 
-              className="page-close-pill" 
-              onClick={onClose}
-              aria-label="Close project view"
-            >
-              <X size={16} />
-              <span className="esc-hint">ESC</span>
             </button>
           </div>
         </header>
