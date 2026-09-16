@@ -97,8 +97,8 @@ export default function SelectedWorks({ onSelectProject }) {
                 </div>
               </div>
 
-              <div className="work-tag work-tag-mono" data-node-id={project.tagNodeId || `14:46${index}`}>
-                <span>{project.tag || project.category}</span>
+              <div className={`work-tag ${project.tagClass}`} data-node-id={project.tagNodeId || `14:46${index}`}>
+                <span>{project.tag}</span>
               </div>
             </div>
           ))}

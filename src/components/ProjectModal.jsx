@@ -40,7 +40,7 @@ export default function ProjectModal({ project, onClose }) {
           <div className="modal-header-block">
             <div className="modal-meta-row">
               <span className="modal-mono-badge">{project.number || 'PROJECT'}</span>
-              <span className="modal-mono-tag">{project.category || 'Portfolio Work'}</span>
+              <span className={`work-tag ${project.tagClass}`}>{project.tag || project.category}</span>
             </div>
 
             <h3 className="modal-title">

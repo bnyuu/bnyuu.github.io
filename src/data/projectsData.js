@@ -4,7 +4,8 @@ export const projectsData = [
     number: '01 -',
     title: 'E-Commerce Customer Churn Prediction',
     category: 'Machine Learning Project',
-    tag: 'Machine Learning',
+    tag: 'MACHINE LEARNING',
+    tagClass: 'tag-ml',
     summary: 'Predictive modeling platform designed to evaluate and forecast customer churn across 50,000 e-commerce customer profiles.',
     highlights: [
       'Built and compared Machine Learning models, including Random Forest, Decision Tree, and Logistic Regression, to predict customer churn using a dataset of 50,000 e-commerce customers.',
@@ -26,7 +27,8 @@ export const projectsData = [
     number: '02 -',
     title: 'SmartSawit: IoT & AI-Powered Smart Agriculture Dashboard',
     category: 'IoT & Artificial Intelligence',
-    tag: 'AI & IoT Agriculture',
+    tag: 'ARTIFICIAL INTELLIGENCE & IOT',
+    tagClass: 'tag-ai',
     summary: 'Real-time digital telemetry monitoring dashboard and AI-driven precision irrigation system for oil palm plantations.',
     highlights: [
       'Developed a real-time digital monitoring web dashboard utilizing Internet of Things (IoT) technology (ESP32, DHT11, and Soil Hygrometer sensors) to track critical plantation metrics such as soil moisture, humidity, and temperature.',
@@ -69,7 +71,8 @@ export const projectsData = [
     number: '03 -',
     title: 'The Impact of AI Literacy on Academic Integrity and Digital Trust',
     category: 'Academic Research & Empirical Analytics',
-    tag: 'Empirical Research',
+    tag: 'RESEARCH',
+    tagClass: 'tag-re',
     summary: 'Quantitative statistical research evaluating the empirical impact of generative AI literacy on academic integrity and digital trust among university students.',
     highlights: [
       'Co-authored a quantitative correlational study involving 213 university undergraduates in Bekasi City to evaluate the impact of AI literacy on academic integrity and digital trust, supporting SDG 4.',
