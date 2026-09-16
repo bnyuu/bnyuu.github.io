@@ -329,22 +329,11 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
               <div className="footer-nav-left">
                 <button 
                   type="button" 
-                  className="footer-nav-btn" 
-                  onClick={onClose}
-                >
-                  <ArrowLeft size={16} />
-                  <span>BACK TO WORKS</span>
-                </button>
-              </div>
-
-              <div className="footer-nav-center">
-                <button 
-                  type="button" 
                   className="footer-scroll-top-btn" 
                   onClick={scrollToTop}
                 >
                   <ArrowUp size={16} />
-                  <span>TOP</span>
+                  <span>BACK TO TOP</span>
                 </button>
               </div>
 
@@ -355,7 +344,7 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
                     className="footer-next-btn" 
                     onClick={() => onSelectProject(nextProject)}
                   >
-                    <span>NEXT: {nextProject.title}</span>
+                    <span>NEXT PROJECT: {nextProject.title}</span>
                     <ArrowRight size={16} />
                   </button>
                 )}
