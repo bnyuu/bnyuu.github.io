@@ -59,13 +59,11 @@ export default function Navbar({ onNavigate }) {
         </ul>
 
         <a 
-          href="#resume" 
-          onClick={(e) => { 
-            e.preventDefault(); 
-            window.open('/resume.pdf', '_blank');
-          }}
+          href="https://drive.google.com/drive/folders/1E55wMOuoj2oEGLXCB9bCjqa9coHnxbf3" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="nav-cta"
-          title="Download or view Resume"
+          title="Download or view Resume on Google Drive"
         >
           Resume
         </a>
