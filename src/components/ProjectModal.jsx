@@ -20,9 +20,11 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // Lock background page scroll
-    const originalStyle = window.getComputedStyle(document.body).overflow;
+    // Lock background page scroll on both body and html
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -30,7 +32,8 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      document.body.style.overflow = originalStyle;
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [onClose]);
@@ -60,6 +63,9 @@ export default function ProjectModal({ project, onClose, onSelectProject }) {
       <motion.div 
         ref={containerRef}
         className="project-page-fullscreen"
+        data-lenis-prevent="true"
+        data-lenis-prevent-wheel="true"
+        data-lenis-prevent-touch="true"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 30 }}

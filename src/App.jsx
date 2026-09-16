@@ -46,6 +46,15 @@ export default function App() {
     };
   }, []);
 
+  // Pause Lenis smooth scroll when fullscreen project view is active
+  useEffect(() => {
+    if (selectedProject) {
+      lenisRef.current?.stop();
+    } else {
+      lenisRef.current?.start();
+    }
+  }, [selectedProject]);
+
   const handleScrollTo = (target) => {
     if (target === '#about') {
       const trigger = ScrollTrigger.getById('about-trigger');
