@@ -59,7 +59,7 @@ export default function Navbar({ onNavigate }) {
         </ul>
 
         <a 
-          href="https://drive.google.com/file/d/1GqXeYXIOz9W5BF7H0FUQ1nEWspNjNfEe/view?usp=sharing" 
+          href="https://drive.google.com/file/d/16Zjo5P_M7IQPJmM4GIDlSzPSaxn2dhCy/view?usp=drivesdk" 
           target="_blank"
           rel="noopener noreferrer"
           className="nav-cta"

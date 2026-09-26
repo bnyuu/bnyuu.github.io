@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://bnyuu.github.io">🌐 <strong>Live Portfolio</strong></a> •
-  <a href="https://drive.google.com/file/d/1GqXeYXIOz9W5BF7H0FUQ1nEWspNjNfEe/view?usp=sharing">📄 <strong>Resume (PDF)</strong></a> •
+  <a href="https://drive.google.com/file/d/16Zjo5P_M7IQPJmM4GIDlSzPSaxn2dhCy/view?usp=drivesdk">📄 <strong>Resume (PDF)</strong></a> •
   <a href="https://www.linkedin.com/in/muh-banu-kuncoro-07a892325/">💼 <strong>LinkedIn</strong></a> •
   <a href="mailto:bkuncoro701@gmail.com">✉️ <strong>Email</strong></a>
 </p>
